@@ -80,11 +80,11 @@ route.get('/api/v1/messages/:id', (request, response) => {
 route.post('/api/v1/messages/', (request, response) => {
 
   // De ID word automatisch bijgevoegd  bij een nieuwe post (auto increment)
-  const new_message = { id: request.params.id, user: request.body.user, message: request.body.message };
+  const new_message = { id: request.params.id, user: request.query.user, message: request.body.message };
   
   // new message toevoegen aan het einde van de array
   messages.push(new_message);
-  response.json({ status:"success", message:"POSTING a new message for user " + request.body.user});
+  response.json({ status:"success", message:"POSTING a new message for user " + request.query.user});
 });
 
 
