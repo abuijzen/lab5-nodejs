@@ -23,7 +23,7 @@ const messages = [
    id: 3,
    user: "Misty",
    message: "Can't drive, it's to misty"
- },
+ }
  
  
 ];
@@ -45,7 +45,9 @@ route.get('/api/v1/messages', (request, response) => {
 
   if (!request.query.user) {
       // geen message gevonden = foutmelding
-      response.json({status:"success",message: "GETTING all messages, count "+ messages.length +" messages"});
+      response.json({
+       status:"success",
+       message: "GETTING all messages, count "+ messages.length +" messages"});
   }
   else {
       // wel message gevongen = json doorsturen
