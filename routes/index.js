@@ -150,4 +150,3 @@ route.delete('/api/v1/messages/:id', (request, response) => {
 
 
 module.exports = route;
-console.log('Server is running on port', 3000);
