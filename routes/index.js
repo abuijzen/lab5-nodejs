@@ -51,7 +51,7 @@ route.get('/', function(request, response, next) {
 // alle messages opvragen of via gebruikersnaam
 // link => URL: localhost:3000/api/v1/messages
 // link => URL: localhost:3000/api/v1/messages?user=Ash
-route.get('/api/v1/messages',cors(), (request, response) => {
+route.get('/api/v1/messages', (request, response) => {
 
   if (!request.query.user) {
       // geen message gevonden = foutmelding
@@ -68,7 +68,7 @@ route.get('/api/v1/messages',cors(), (request, response) => {
 //---------------------------GET-----------------------------------//
 // message opvragen via id
 // link => URL: localhost:3000/api/v1/messages/NrID
-route.get('/api/v1/messages/:id',cors(), (request, response) => {
+route.get('/api/v1/messages/:id', (request, response) => {
 
   // controleren of er een ID overeenkomt met een bestaande ID
   const message = messages.find(my_int => my_int.id === parseInt(request.params.id));
@@ -87,7 +87,7 @@ route.get('/api/v1/messages/:id',cors(), (request, response) => {
 //---------------------------POST-----------------------------------//
 // message posten
 // link => POSTMAN: POST: localhost:3000/api/v1/messages 
-route.post('/api/v1/messages/',cors(), (request, response) => {
+route.post('/api/v1/messages/', (request, response) => {
 
   // De ID word automatisch bijgevoegd  bij een nieuwe post (auto increment)
   const new_message = { id: request.params.id, user: request.query.user, message: request.body.message };
@@ -101,7 +101,7 @@ route.post('/api/v1/messages/',cors(), (request, response) => {
 //---------------------------PUT-----------------------------------//
 // message wijzigen via gekozen id
 // link => POSTMAN: localhost:3000/api/v1/messages/NrID
-route.put('/api/v1/messages/:id',cors(), (request, response) => {
+route.put('/api/v1/messages/:id', (request, response) => {
 
   const message = messages.find(my_int => my_int.id === parseInt(request.params.id));
 
@@ -122,7 +122,7 @@ route.put('/api/v1/messages/:id',cors(), (request, response) => {
 
 // Message verwijderen via id
 // link => POSTMAN: localhost:3000/api/v1/messages/NrID
-route.delete('/api/v1/messages/:id',cors(), (request, response) => {
+route.delete('/api/v1/messages/:id', (request, response) => {
 
 
   const message_to_delete = messages.find(a => a.id === parseInt(request.params.id));
