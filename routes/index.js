@@ -2,9 +2,9 @@
 // 1) npm install
 // 2) npm start
 // 3) code runt automatisch op poort 3000
-app.use(cors({
-  origin: 'https://banana-sundae-55904.herokuapp.com'
-}));
+//app.use(cors({
+  //origin: 'https://banana-sundae-55904.herokuapp.com'
+//}));
 
 const express = require('express');
 const route = express.Router();
