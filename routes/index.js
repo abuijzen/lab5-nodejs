@@ -6,8 +6,12 @@
   //origin: 'https://banana-sundae-55904.herokuapp.com'
 //}));
 
+
 const express = require('express');
 const route = express.Router();
+var cors = require('cors')
+route.use(cors())
+
 //var cors = require('cors');//aanpassinh
 
 //route.use(cors();//aanpassing
