@@ -2,7 +2,10 @@
 // 1) npm install
 // 2) npm start
 // 3) code runt automatisch op poort 3000
-
+var express = require('express');
+var cors = require('cors');
+var app = express();
+app.use(cors());
 
 const express = require('express');
 const route = express.Router();
