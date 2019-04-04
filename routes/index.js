@@ -6,9 +6,9 @@
 
 const express = require('express');
 const route = express.Router();
-var cors = require('cors');//aanpassinh
+//var cors = require('cors');//aanpassinh
 
-route.use(cors();//aanpassing
+//route.use(cors();//aanpassing
 
 // static data (array)
 const messages = [
