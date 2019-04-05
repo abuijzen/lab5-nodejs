@@ -77,7 +77,8 @@ route.get('/api/v1/messages', (request, response) => {
 route.get('/api/v1/messages/:id', (request, response) => {
 
   // controleren of er een ID overeenkomt met een bestaande ID
-  const message = messages.find(my_int => my_int.id === parseInt(request.params.id));
+  //const message = messages.find(my_int => my_int.id === parseInt(request.params.id));
+  const message = messages.find(request.params.id);
 
   
   if(!message){
